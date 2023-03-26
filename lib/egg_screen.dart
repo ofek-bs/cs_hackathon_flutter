@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-// TODO:
-// 1) Make the app react to the change in state! The egg should break after 40 clicks!
-// 2) Increase font size for the "i clicks" label. Bonus: make it BOLD.
+class EggScreen extends StatefulWidget {
+  @override
+  State<EggScreen> createState() => _EggScreenState();
+}
 
-class EggScreen extends StatelessWidget {
+class _EggScreenState extends State<EggScreen> {
   int _count = 0;
 
   @override
@@ -19,7 +20,9 @@ class EggScreen extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                _count++;
+                setState(() {
+                  _count++;
+                });
                 debugPrint('Tapped $_count!');
               },
               child: loadEggImage(),
@@ -27,7 +30,8 @@ class EggScreen extends StatelessWidget {
             Text(
               "$_count Clicks",
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ],
