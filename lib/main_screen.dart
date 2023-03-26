@@ -9,7 +9,18 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("My sample app"),
       ),
-      body: Text("Hello Flutter"),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Hello Flutter"),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("My Button"),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
